@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/shell :: head('Inicio')}"></head>
+<body th:replace="~{fragments/shell :: shell('Inicio', 'inicio', ~{::pageContent})}">
+<th:block th:fragment="pageContent">
+    <section class="page-intro">
+        <div>
+            <span class="date-label" th:text="${fechaPanel}">Viernes, 3 de julio</span>
+            <h1>Panel integral de atencion</h1>
+            <p>Monitoreo de citas, disponibilidad medica e informacion clinica digital para una atencion mas rapida y ordenada.</p>
+        </div>
+        <a class="primary-action large" th:href="@{/citas}">Nueva consulta</a>
+    </section>
+
+    <section class="live-consult">
+        <div class="live-icon">VC</div>
+        <div>
+            <span class="live-state" th:text="${consultaEnVivo.estado}">En vivo</span>
+            <h2 th:text="${consultaEnVivo.doctor}">Dra. Sofia Ramirez</h2>
+            <p>
+                <span th:text="${consultaEnVivo.especialidad}">Medicina General</span>
+                <span> · </span>
+                <span th:text="${consultaEnVivo.horario}">14:30</span>
+            </p>
+        </div>
+        <a class="ghost-button" href="#">Abrir teleconsulta</a>
+    </section>
+
+    <section class="stat-grid">
+        <article class="stat-card" th:each="kpi : ${kpis}" th:classappend="' tone-' + ${kpi.tono}">
+            <span class="stat-icon" th:text="${#strings.substring(kpi.titulo,0,2)}">MD</span>
+            <strong th:text="${kpi.valor}">4</strong>
+            <p th:text="${kpi.titulo}">Medicos disponibles</p>
+            <small th:text="${kpi.descripcion}">Detalle</small>
+        </article>
+    </section>
+
+    <section class="dashboard-grid">
+        <article class="panel wide">
+            <div class="panel-header">
+                <h2>Proximas consultas</h2>
+                <a th:href="@{/citas}">Ver todas</a>
+            </div>
+            <div class="consult-list">
+                <article class="consult-row" th:each="consulta : ${proximasConsultas}">
+                    <span class="row-icon">CT</span>
+                    <div>
+                        <strong th:text="${consulta.doctor}">Dra. Isabel Quispe</strong>
+                        <p th:text="${consulta.especialidad}">Psicologia</p>
+                    </div>
+                    <div class="row-time">
+                        <strong th:text="${consulta.horario}">Hoy 19:00</strong>
+                        <span th:text="${consulta.canal}">Virtual</span>
+                    </div>
+                </article>
+            </div>
+        </article>
+
+        <article class="panel">
+            <div class="panel-header">
+                <h2>Indicadores de salud</h2>
+                <span class="mini-icon">ECG</span>
+            </div>
+            <div class="health-list">
+                <div th:each="dato : ${salud}">
+                    <span th:text="${dato.nombre}">Presion arterial</span>
+                    <strong th:text="${dato.valor}">118/76</strong>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <section class="panel">
+        <div class="panel-header">
+            <h2>Acciones rapidas del HIS</h2>
+            <span>Service + DAO en memoria</span>
+        </div>
+        <div class="quick-grid">
+            <a class="quick-action" th:each="accion : ${acciones}" th:href="@{${accion.ruta}}">
+                <strong th:text="${accion.titulo}">Programar cita</strong>
+                <span th:text="${accion.descripcion}">Descripcion</span>
+            </a>
+        </div>
+    </section>
+</th:block>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/shell :: head('Pacientes')}"></head>
+<body th:replace="~{fragments/shell :: shell('Pacientes', 'pacientes', ~{::pageContent})}">
+<th:block th:fragment="pageContent">
+    <section class="page-intro">
+        <div>
+            <span class="date-label">Registro de asegurados</span>
+            <h1>Pacientes</h1>
+            <p>Administra pacientes en SQLite con validacion por DNI y bloqueo de eliminacion si existen citas.</p>
+        </div>
+    </section>
+
+    <section class="appointment-layout">
+        <form class="panel appointment-form" th:action="@{/pacientes}" method="post">
+            <div class="panel-header">
+                <h2>Nuevo paciente</h2>
+                <span>CRUD SQLite</span>
+            </div>
+            <div th:if="${successMessage}" class="alert" th:text="${successMessage}"></div>
+            <div th:if="${errorMessage}" class="alert alert-error" th:text="${errorMessage}"></div>
+            <label>Nombre completo <input type="text" name="nombre" required></label>
+            <label>DNI <input type="text" name="dni" minlength="8" required></label>
+            <label>Edad <input type="number" name="edad" min="0" max="120" required></label>
+            <label>Tipo de seguro <input type="text" name="tipoSeguro" required></label>
+            <label>Riesgo
+                <select name="riesgo" required>
+                    <option>Bajo</option>
+                    <option>Medio</option>
+                    <option>Alto</option>
+                </select>
+            </label>
+            <button class="primary-action full-field" type="submit">Registrar paciente</button>
+        </form>
+
+        <aside class="panel">
+            <div class="panel-header">
+                <h2>Buscar</h2>
+                <span>DNI</span>
+            </div>
+            <form class="stack-form" th:action="@{/pacientes}" method="get">
+                <label>DNI <input type="text" name="dni" placeholder="45872163"></label>
+                <button class="primary-action" type="submit">Buscar</button>
+            </form>
+            <div class="patient-tags" th:if="${pacienteEncontrado}">
+                <span th:text="${pacienteEncontrado.nombre}">Paciente</span>
+                <span>DNI <strong th:text="${pacienteEncontrado.dni}">00000000</strong></span>
+                <span th:text="${pacienteEncontrado.tipoSeguro}">Seguro</span>
+            </div>
+        </aside>
+    </section>
+
+    <section class="panel">
+        <div class="panel-header">
+            <h2>Pacientes registrados</h2>
+            <span>Relaciones con citas e historias</span>
+        </div>
+        <div class="table-card">
+            <table>
+                <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>DNI</th>
+                    <th>Edad</th>
+                    <th>Seguro</th>
+                    <th>Riesgo</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="paciente : ${pacientes}">
+                    <td>
+                        <form th:id="${'paciente-' + paciente.dni}" th:action="@{/pacientes/{dni}/actualizar(dni=${paciente.dni})}" method="post"></form>
+                        <input th:attr="form=${'paciente-' + paciente.dni}" type="text" name="nombre" th:value="${paciente.nombre}" required>
+                    </td>
+                    <td th:text="${paciente.dni}">45872163</td>
+                    <td><input th:attr="form=${'paciente-' + paciente.dni}" type="number" name="edad" min="0" max="120" th:value="${#strings.replace(paciente.edad, ' anos', '')}" required></td>
+                    <td><input th:attr="form=${'paciente-' + paciente.dni}" type="text" name="tipoSeguro" th:value="${paciente.tipoSeguro}" required></td>
+                    <td>
+                        <select th:attr="form=${'paciente-' + paciente.dni}" name="riesgo">
+                            <option th:selected="${paciente.riesgo == 'Bajo'}">Bajo</option>
+                            <option th:selected="${paciente.riesgo == 'Medio'}">Medio</option>
+                            <option th:selected="${paciente.riesgo == 'Alto'}">Alto</option>
+                        </select>
+                    </td>
+                    <td>
+                        <button class="soft-button compact" th:attr="form=${'paciente-' + paciente.dni}" type="submit">Guardar</button>
+                    </td>
+                    <td>
+                        <form th:action="@{/pacientes/{dni}/eliminar(dni=${paciente.dni})}" method="post">
+                            <button class="soft-button compact danger" type="submit">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</th:block>
+</body>
+</html>

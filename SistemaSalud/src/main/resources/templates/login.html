@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/shell :: head('Login')}"></head>
+<body th:replace="~{fragments/shell :: shell('Login', 'seguridad', ~{::pageContent})}">
+<th:block th:fragment="pageContent">
+    <section class="page-intro">
+        <div>
+            <span class="date-label">Acceso por rol</span>
+            <h1>Inicio de sesion</h1>
+            <p>Usa un usuario demo para probar permisos operativos del sistema.</p>
+        </div>
+    </section>
+
+    <section class="appointment-layout">
+        <form class="panel appointment-form" th:action="@{/login}" method="post">
+            <div class="panel-header">
+                <h2>Credenciales</h2>
+                <span>SQLite</span>
+            </div>
+            <div th:if="${param.success}" class="alert" th:text="${param.success}"></div>
+            <div th:if="${param.error}" class="alert alert-error" th:text="${param.error}"></div>
+            <label>
+                Usuario
+                <input type="text" name="username" placeholder="admin" required>
+            </label>
+            <label>
+                Contrasena
+                <input type="password" name="password" placeholder="admin123" required>
+            </label>
+            <button class="primary-action full-field" type="submit">Ingresar</button>
+        </form>
+
+        <aside class="panel">
+            <div class="panel-header">
+                <h2>Usuarios demo</h2>
+                <span>Roles</span>
+            </div>
+            <div class="health-list">
+                <div><span>admin</span><strong>admin123</strong></div>
+                <div><span>medico</span><strong>medico123</strong></div>
+                <div><span>paciente</span><strong>paciente123</strong></div>
+            </div>
+        </aside>
+    </section>
+</th:block>
+</body>
+</html>

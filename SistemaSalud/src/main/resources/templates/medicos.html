@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/shell :: head('Medicos')}"></head>
+<body th:replace="~{fragments/shell :: shell('Medicos', 'medicos', ~{::pageContent})}">
+<th:block th:fragment="pageContent">
+    <section class="page-intro">
+        <div>
+            <span class="date-label">Directorio medico</span>
+            <h1>Medicos y especialidades</h1>
+            <p>Consulta disponibilidad de profesionales para reducir tiempos de espera y asignar citas con mayor precision.</p>
+        </div>
+        <a class="primary-action large" th:href="@{/citas}">Agendar cita</a>
+    </section>
+
+    <section class="appointment-layout">
+        <form class="panel appointment-form" th:action="@{/medicos}" method="post">
+            <div class="panel-header">
+                <h2>Registrar medico</h2>
+                <span>CRUD SQLite</span>
+            </div>
+            <div th:if="${successMessage}" class="alert" th:text="${successMessage}"></div>
+            <div th:if="${errorMessage}" class="alert alert-error" th:text="${errorMessage}"></div>
+            <label>Nombre <input type="text" name="nombre" required></label>
+            <label>Especialidad <input type="text" name="especialidad" required></label>
+            <label>Disponibilidad <input type="text" name="disponibilidad" placeholder="Disponible hoy" required></label>
+            <label>Ubicacion <input type="text" name="ubicacion" required></label>
+            <label class="full-field">Detalle <input type="text" name="detalle" required></label>
+            <label class="checkbox-line full-field">
+                <input type="checkbox" name="disponibleHoy" value="true" checked>
+                Disponible para asignacion automatica
+            </label>
+            <button class="primary-action full-field" type="submit">Guardar medico</button>
+        </form>
+
+        <aside class="panel">
+            <div class="panel-header">
+                <h2>Reglas</h2>
+                <span>Agenda</span>
+            </div>
+            <ul class="policy-list">
+                <li>No se elimina un medico si tiene citas relacionadas.</li>
+                <li>La asignacion de citas usa especialidad y disponibilidad.</li>
+                <li>Los cambios se guardan directamente en SQLite.</li>
+            </ul>
+        </aside>
+    </section>
+
+    <section class="panel">
+        <div class="panel-header">
+            <h2>Especialidades disponibles</h2>
+            <span>Asignacion por demanda</span>
+        </div>
+        <div class="chip-row">
+            <span class="chip" th:each="especialidad : ${especialidades}" th:text="${especialidad}">Cardiologia</span>
+        </div>
+    </section>
+
+    <section class="doctor-grid">
+        <article class="doctor-card" th:each="medico : ${medicos}">
+            <div class="doctor-avatar" th:text="${#strings.substring(medico.nombre,0,2)}">Dr</div>
+            <div>
+                <h2 th:text="${medico.nombre}">Dra. Sofia Ramirez</h2>
+                <p th:text="${medico.especialidad}">Medicina General</p>
+            </div>
+            <span class="status-pill" th:text="${medico.disponibilidad}">Disponible</span>
+            <dl>
+                <div>
+                    <dt>Ubicacion</dt>
+                    <dd th:text="${medico.ubicacion}">Teleconsulta</dd>
+                </div>
+                <div>
+                    <dt>Detalle</dt>
+                    <dd th:text="${medico.detalle}">Agenda abierta</dd>
+                </div>
+            </dl>
+            <a class="soft-button" th:href="@{/citas}">Reservar</a>
+        </article>
+    </section>
+
+    <section class="panel">
+        <div class="panel-header">
+            <h2>Gestion de medicos</h2>
+            <span>Editar / eliminar</span>
+        </div>
+        <div class="table-card">
+            <table>
+                <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Especialidad</th>
+                    <th>Disponibilidad</th>
+                    <th>Ubicacion</th>
+                    <th>Detalle</th>
+                    <th>Activo</th>
+                    <th>Guardar</th>
+                    <th>Eliminar</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="medico : ${medicos}">
+                    <td>
+                        <form th:id="${'medico-' + medico.id}" th:action="@{/medicos/{id}/actualizar(id=${medico.id})}" method="post"></form>
+                        <input th:attr="form=${'medico-' + medico.id}" type="text" name="nombre" th:value="${medico.nombre}" required>
+                    </td>
+                    <td><input th:attr="form=${'medico-' + medico.id}" type="text" name="especialidad" th:value="${medico.especialidad}" required></td>
+                    <td><input th:attr="form=${'medico-' + medico.id}" type="text" name="disponibilidad" th:value="${medico.disponibilidad}" required></td>
+                    <td><input th:attr="form=${'medico-' + medico.id}" type="text" name="ubicacion" th:value="${medico.ubicacion}" required></td>
+                    <td><input th:attr="form=${'medico-' + medico.id}" type="text" name="detalle" th:value="${medico.detalle}" required></td>
+                    <td><input th:attr="form=${'medico-' + medico.id}" type="checkbox" name="disponibleHoy" value="true" th:checked="${medico.disponibleHoy}"></td>
+                    <td><button class="soft-button compact" th:attr="form=${'medico-' + medico.id}" type="submit">Guardar</button></td>
+                    <td>
+                        <form th:action="@{/medicos/{id}/eliminar(id=${medico.id})}" method="post">
+                            <button class="soft-button compact danger" type="submit">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</th:block>
+</body>
+</html>

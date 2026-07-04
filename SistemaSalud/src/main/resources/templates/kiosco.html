@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/shell :: head('Kiosco digital')}"></head>
+<body th:replace="~{fragments/shell :: shell('Kiosco digital', 'kiosco', ~{::pageContent})}">
+<th:block th:fragment="pageContent">
+    <section class="page-intro">
+        <div>
+            <span class="date-label">Autoservicio EsSalud</span>
+            <h1>Kiosco digital</h1>
+            <p>Interfaz para que el asegurado confirme citas, revise su turno y reduzca la carga operativa presencial.</p>
+        </div>
+    </section>
+
+    <section class="kiosk-layout">
+        <article class="kiosk-screen">
+            <span class="kiosk-label">Modulo de atencion</span>
+            <h2>Ingrese DNI o numero de asegurado</h2>
+            <form th:action="@{/kiosco/buscar}" method="post">
+                <input class="kiosk-input" type="text" name="dni" th:value="${dniConsultado ?: '45872163'}" required>
+                <div class="kiosk-actions">
+                    <button type="submit">Buscar citas</button>
+                    <a th:href="@{/historias(dni=${dniConsultado})}">Consultar historia</a>
+                </div>
+            </form>
+        </article>
+
+        <article class="panel">
+            <div class="panel-header">
+                <h2>Turnos activos</h2>
+                <span>Sede central</span>
+            </div>
+            <div class="turn-list">
+                <article th:each="turno : ${turnos}">
+                    <strong th:text="${turno.codigo}">A-021</strong>
+                    <div>
+                        <span th:text="${turno.especialidad}">Medicina General</span>
+                        <small th:text="${turno.ubicacion}">Consultorio 204</small>
+                    </div>
+                    <em th:text="${turno.estado}">Llamando</em>
+                </article>
+            </div>
+        </article>
+    </section>
+
+    <section th:if="${successMessage}" class="alert" th:text="${successMessage}"></section>
+    <section th:if="${errorMessage}" class="alert alert-error" th:text="${errorMessage}"></section>
+
+    <section class="panel" th:if="${citasKiosco}">
+        <div class="panel-header">
+            <h2>Citas encontradas</h2>
+            <span th:text="${dniConsultado}">DNI</span>
+        </div>
+        <div class="table-card">
+            <table>
+                <thead>
+                <tr>
+                    <th>Codigo</th>
+                    <th>Paciente</th>
+                    <th>Especialidad</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Estado</th>
+                    <th>Confirmar llegada</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="cita : ${citasKiosco}">
+                    <td th:text="${cita.codigo}">C-1024</td>
+                    <td th:text="${cita.paciente}">Paciente</td>
+                    <td th:text="${cita.especialidad}">Medicina</td>
+                    <td th:text="${cita.fecha}">Hoy</td>
+                    <td th:text="${cita.hora}">14:30</td>
+                    <td><span class="status-pill" th:text="${cita.estado}">Confirmada</span></td>
+                    <td>
+                        <form th:action="@{/kiosco/confirmar}" method="post">
+                            <input type="hidden" name="codigo" th:value="${cita.codigo}">
+                            <button class="soft-button compact" type="submit">Confirmar</button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="step-grid">
+        <article class="step-card" th:each="paso : ${pasosKiosco}">
+            <span th:text="${paso.numero}">1</span>
+            <h2 th:text="${paso.titulo}">Identificacion</h2>
+            <p th:text="${paso.descripcion}">Descripcion del paso.</p>
+        </article>
+    </section>
+</th:block>
+</body>
+</html>

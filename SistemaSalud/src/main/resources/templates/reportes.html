@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/shell :: head('Reportes')}"></head>
+<body th:replace="~{fragments/shell :: shell('Reportes', 'reportes', ~{::pageContent})}">
+<th:block th:fragment="pageContent">
+    <section class="page-intro">
+        <div>
+            <span class="date-label">Gestion y analisis</span>
+            <h1>Reportes operativos</h1>
+            <p>Indicadores para evaluar eficiencia, acceso a informacion clinica y calidad de atencion al asegurado.</p>
+        </div>
+    </section>
+
+    <section class="stat-grid">
+        <article class="stat-card" th:each="indicador : ${indicadoresOperativos}" th:classappend="' tone-' + ${indicador.tono}">
+            <span class="stat-icon" th:text="${#strings.substring(indicador.titulo,0,2)}">RE</span>
+            <strong th:text="${indicador.valor}">38%</strong>
+            <p th:text="${indicador.titulo}">Menos espera</p>
+            <small th:text="${indicador.descripcion}">Descripcion</small>
+        </article>
+    </section>
+
+    <section class="panel">
+        <div class="panel-header">
+            <h2>Requerimientos que resuelven la problematica</h2>
+            <span>Priorizacion DAO</span>
+        </div>
+        <div class="table-card">
+            <table>
+                <thead>
+                <tr>
+                    <th>Codigo</th>
+                    <th>Prioridad</th>
+                    <th>Descripcion</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="req : ${requerimientos}">
+                    <td th:text="${req.codigo}">RF02</td>
+                    <td><span class="status-pill" th:text="${req.prioridad}">Alta</span></td>
+                    <td th:text="${req.descripcion}">Requerimiento</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="dashboard-grid">
+        <article class="panel">
+            <div class="panel-header">
+                <h2>Citas por estado</h2>
+                <span>SQLite</span>
+            </div>
+            <div class="health-list">
+                <div th:each="fila : ${citasPorEstado}">
+                    <span th:text="${fila.categoria}">Confirmada</span>
+                    <strong th:text="${fila.valor}">2</strong>
+                </div>
+            </div>
+        </article>
+
+        <article class="panel">
+            <div class="panel-header">
+                <h2>Citas por especialidad</h2>
+                <span>Demanda</span>
+            </div>
+            <div class="health-list">
+                <div th:each="fila : ${citasPorEspecialidad}">
+                    <span th:text="${fila.categoria}">Cardiologia</span>
+                    <strong th:text="${fila.valor}">1</strong>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <section class="panel">
+        <div class="panel-header">
+            <h2>Medicos con citas asignadas</h2>
+            <span>Relacion citas-medicos</span>
+        </div>
+        <div class="table-card">
+            <table>
+                <thead>
+                <tr>
+                    <th>Medico</th>
+                    <th>Total de citas</th>
+                    <th>Detalle</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="fila : ${citasPorMedico}">
+                    <td th:text="${fila.categoria}">Dra. Sofia Ramirez</td>
+                    <td><span class="status-pill" th:text="${fila.valor}">1</span></td>
+                    <td th:text="${fila.detalle}">Medico</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="panel impact-panel">
+        <div>
+            <h2>Resultado esperado</h2>
+            <p>
+                El sistema integra citas, historias clinicas, seguridad y reportes para eliminar duplicidad,
+                reducir tiempos de espera y mejorar la disponibilidad de informacion durante la atencion.
+            </p>
+        </div>
+        <div class="impact-meter">
+            <span style="--value: 92%">92%</span>
+            <p>Disponibilidad clinica objetivo</p>
+        </div>
+    </section>
+</th:block>
+</body>
+</html>

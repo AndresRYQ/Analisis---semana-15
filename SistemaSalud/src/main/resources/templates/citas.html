@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/shell :: head('Citas')}"></head>
+<body th:replace="~{fragments/shell :: shell('Citas', 'citas', ~{::pageContent})}">
+<th:block th:fragment="pageContent">
+    <section class="page-intro">
+        <div>
+            <span class="date-label">Gestion automatizada</span>
+            <h1>Citas medicas</h1>
+            <p>Programa, consulta, modifica y confirma citas persistidas en SQLite con reglas de disponibilidad.</p>
+        </div>
+    </section>
+
+    <section class="appointment-layout">
+        <form class="panel appointment-form" th:action="@{/citas}" method="post">
+            <div class="panel-header">
+                <h2>Registrar solicitud</h2>
+                <span>Service + DAO</span>
+            </div>
+
+            <div th:if="${successMessage}" class="alert" th:text="${successMessage}"></div>
+            <div th:if="${errorMessage}" class="alert" th:text="${errorMessage}"></div>
+
+            <label>
+                Nombre completo
+                <input type="text" name="nombre" placeholder="Ej. Luis Ramirez Soto" required>
+            </label>
+
+            <label>
+                DNI o asegurado
+                <input type="text" name="dni" placeholder="Ej. 45872163" minlength="8" required>
+            </label>
+
+            <label>
+                Especialidad
+                <select name="especialidad" required>
+                    <option value="">Selecciona una especialidad</option>
+                    <option>Medicina General</option>
+                    <option>Cardiologia</option>
+                    <option>Pediatria</option>
+                    <option>Psicologia</option>
+                    <option>Odontologia</option>
+                    <option>Ginecologia</option>
+                </select>
+            </label>
+
+            <label>
+                Fecha solicitada
+                <input type="date" name="fecha" required>
+            </label>
+
+            <label>
+                Prioridad
+                <select name="prioridad">
+                    <option>Normal</option>
+                    <option>Preferente</option>
+                    <option>Paciente cronico</option>
+                    <option>Urgente administrativo</option>
+                </select>
+            </label>
+
+            <label class="full-field">
+                Motivo de consulta
+                <textarea name="mensaje" rows="4" placeholder="Describe brevemente el motivo de atencion"></textarea>
+            </label>
+
+            <button class="primary-action full-field" type="submit">Registrar cita</button>
+        </form>
+
+        <aside class="panel">
+            <div class="panel-header">
+                <h2>Horarios sugeridos</h2>
+                <span>Reglas de asignacion</span>
+            </div>
+            <div class="slot-list">
+                <article class="slot-row" th:each="slot : ${slots}">
+                    <time th:text="${slot.hora}">08:30</time>
+                    <div>
+                        <strong th:text="${slot.especialidad}">Medicina General</strong>
+                        <span th:text="${slot.estado}">Disponible</span>
+                    </div>
+                </article>
+            </div>
+        </aside>
+    </section>
+
+    <section class="panel">
+        <div class="panel-header">
+            <h2>Agenda registrada</h2>
+            <span>SQLite</span>
+        </div>
+        <div class="table-card">
+            <table>
+                <thead>
+                <tr>
+                    <th>Codigo</th>
+                    <th>Paciente</th>
+                    <th>Especialidad</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Estado</th>
+                    <th>Canal</th>
+                    <th>Reprogramar</th>
+                    <th>Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="cita : ${citas}">
+                    <td th:text="${cita.codigo}">C-1024</td>
+                    <td th:text="${cita.paciente}">Maria Torres</td>
+                    <td th:text="${cita.especialidad}">Medicina General</td>
+                    <td th:text="${cita.fecha}">Hoy</td>
+                    <td th:text="${cita.hora}">14:30</td>
+                    <td><span class="status-pill" th:text="${cita.estado}">Confirmada</span></td>
+                    <td th:text="${cita.canal}">Virtual</td>
+                    <td>
+                        <form class="inline-form" th:action="@{/citas/{codigo}/reprogramar(codigo=${cita.codigo})}" method="post">
+                            <input type="date" name="fecha" required>
+                            <input type="time" name="hora" required>
+                            <button class="soft-button compact" type="submit">Mover</button>
+                        </form>
+                    </td>
+                    <td>
+                        <div class="action-row">
+                            <form th:action="@{/citas/{codigo}/confirmar(codigo=${cita.codigo})}" method="post">
+                                <button class="soft-button compact" type="submit">Confirmar</button>
+                            </form>
+                            <form th:action="@{/citas/{codigo}/atender(codigo=${cita.codigo})}" method="post">
+                                <button class="soft-button compact" type="submit">Atender</button>
+                            </form>
+                            <form th:action="@{/citas/{codigo}/cancelar(codigo=${cita.codigo})}" method="post">
+                                <button class="soft-button compact danger" type="submit">Cancelar</button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</th:block>
+</body>
+</html>

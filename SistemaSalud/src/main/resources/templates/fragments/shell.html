@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(pageTitle)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${pageTitle} + ' | EsSalud HIS'">EsSalud HIS</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body th:fragment="shell(pageTitle, activePage, content)">
+<div class="app-shell">
+    <aside class="sidebar" data-sidebar>
+        <a class="brand" th:href="@{/}" aria-label="Ir al inicio">
+            <span class="brand-mark">
+                <span class="brand-pulse"></span>
+                HIS
+            </span>
+            <span>
+                <strong>EsSalud HIS</strong>
+                <small>Salud Preventiva-Digital</small>
+            </span>
+        </a>
+
+        <nav class="side-nav" aria-label="Navegacion principal">
+            <a th:href="@{/}" th:classappend="${activePage == 'inicio'} ? ' active'">
+                <span class="nav-icon">01</span>
+                Inicio
+            </a>
+            <a th:href="@{/medicos}" th:classappend="${activePage == 'medicos'} ? ' active'">
+                <span class="nav-icon">02</span>
+                Medicos
+            </a>
+            <a th:href="@{/pacientes}" th:classappend="${activePage == 'pacientes'} ? ' active'">
+                <span class="nav-icon">03</span>
+                Pacientes
+            </a>
+            <a th:href="@{/citas}" th:classappend="${activePage == 'citas'} ? ' active'">
+                <span class="nav-icon">04</span>
+                Citas
+            </a>
+            <a th:href="@{/historias}" th:classappend="${activePage == 'historias'} ? ' active'">
+                <span class="nav-icon">05</span>
+                Historias
+            </a>
+            <a th:href="@{/kiosco}" th:classappend="${activePage == 'kiosco'} ? ' active'">
+                <span class="nav-icon">06</span>
+                Kiosco
+            </a>
+            <a th:href="@{/reportes}" th:classappend="${activePage == 'reportes'} ? ' active'">
+                <span class="nav-icon">07</span>
+                Reportes
+            </a>
+            <a th:href="@{/seguridad}" th:classappend="${activePage == 'seguridad'} ? ' active'">
+                <span class="nav-icon">08</span>
+                Seguridad
+            </a>
+        </nav>
+
+        <div class="problem-card">
+            <span>Objetivo operativo</span>
+            <p>Optimizar citas medicas, digitalizar historias clinicas y mejorar la calidad de atencion.</p>
+        </div>
+
+        <div class="user-card">
+            <span class="avatar" th:text="${usuario.iniciales}">JP</span>
+            <div>
+                <strong th:text="${usuario.nombre}">Juan Perez</strong>
+                <small th:text="${usuario.rol}">Paciente</small>
+            </div>
+            <form th:action="@{/logout}" method="post">
+                <button class="signout link-button" type="submit">Salir</button>
+            </form>
+        </div>
+    </aside>
+
+    <div class="main-area">
+        <header class="topbar">
+            <button class="sidebar-toggle" type="button" aria-expanded="false" data-sidebar-toggle>
+                Menu
+            </button>
+
+            <label class="search-box">
+                <span>Buscar</span>
+                <input type="search" placeholder="Buscar pacientes, medicos, citas o especialidades...">
+            </label>
+
+            <div class="top-actions">
+                <button class="icon-button" type="button" aria-label="Notificaciones">
+                    <span class="notification-dot"></span>
+                    N
+                </button>
+                <a class="primary-action" th:href="@{/citas}">Nueva cita</a>
+            </div>
+        </header>
+
+        <main class="content" th:insert="${content}"></main>
+    </div>
+</div>
+
+<script th:src="@{/js/app.js}"></script>
+</body>
+</html>

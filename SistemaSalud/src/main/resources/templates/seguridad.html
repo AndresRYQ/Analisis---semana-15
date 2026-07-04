@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/shell :: head('Seguridad')}"></head>
+<body th:replace="~{fragments/shell :: shell('Seguridad', 'seguridad', ~{::pageContent})}">
+<th:block th:fragment="pageContent">
+    <section class="page-intro">
+        <div>
+            <span class="date-label">Control de accesos</span>
+            <h1>Seguridad y auditoria</h1>
+            <p>Roles, permisos y trazabilidad para proteger la informacion medica del asegurado.</p>
+        </div>
+    </section>
+
+    <section class="role-grid">
+        <article class="role-card" th:each="rol : ${roles}">
+            <span th:text="${#strings.substring(rol.nombre,0,2)}">PA</span>
+            <h2 th:text="${rol.nombre}">Paciente</h2>
+            <p th:text="${rol.descripcion}">Descripcion del rol.</p>
+        </article>
+    </section>
+
+    <section class="panel">
+        <div class="panel-header">
+            <h2>Usuarios del sistema</h2>
+            <a th:href="@{/login}">Cambiar sesion</a>
+        </div>
+        <div class="table-card">
+            <table>
+                <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Nombre</th>
+                    <th>Rol</th>
+                    <th>Estado</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="usuarioSistema : ${usuariosSistema}">
+                    <td th:text="${usuarioSistema.username}">admin</td>
+                    <td th:text="${usuarioSistema.nombre}">Administrador</td>
+                    <td><span class="status-pill" th:text="${usuarioSistema.rol}">Administrador</span></td>
+                    <td th:text="${usuarioSistema.estado}">Activo</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="dashboard-grid">
+        <article class="panel wide">
+            <div class="panel-header">
+                <h2>Auditoria reciente</h2>
+                <span>Registro DAO</span>
+            </div>
+            <div class="audit-list">
+                <article th:each="auditoria : ${auditorias}">
+                    <time th:text="${auditoria.hora}">08:12</time>
+                    <div>
+                        <strong th:text="${auditoria.usuario}">Medico</strong>
+                        <p th:text="${auditoria.accion}">Apertura de historia clinica</p>
+                    </div>
+                    <span class="status-pill" th:text="${auditoria.resultado}">Autorizado</span>
+                </article>
+            </div>
+        </article>
+
+        <article class="panel">
+            <div class="panel-header">
+                <h2>Politicas</h2>
+                <span>RNF01 - RNF03</span>
+            </div>
+            <ul class="policy-list">
+                <li>Autenticacion obligatoria por usuario y contrasena.</li>
+                <li>Permisos diferenciados para paciente, medico y administrador.</li>
+                <li>Auditoria de cada acceso a historias clinicas.</li>
+                <li>Datos medicos tratados como informacion confidencial.</li>
+            </ul>
+        </article>
+    </section>
+</th:block>
+</body>
+</html>

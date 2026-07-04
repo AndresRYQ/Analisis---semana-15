@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/shell :: head('Historias clinicas')}"></head>
+<body th:replace="~{fragments/shell :: shell('Historias clinicas', 'historias', ~{::pageContent})}">
+<th:block th:fragment="pageContent">
+    <section class="page-intro">
+        <div>
+            <span class="date-label">Historia clinica digital</span>
+            <h1>Acceso clinico centralizado</h1>
+            <p>Consulta antecedentes, diagnosticos, tratamientos y auditoria documental en una sola vista.</p>
+        </div>
+        <form class="inline-form" th:action="@{/historias}" method="get">
+            <input type="text" name="dni" placeholder="Buscar por DNI" minlength="8">
+            <button class="primary-action large" type="submit">Buscar</button>
+        </form>
+    </section>
+
+    <section th:if="${successMessage}" class="alert" th:text="${successMessage}"></section>
+    <section th:if="${errorMessage}" class="alert alert-error" th:text="${errorMessage}"></section>
+
+    <section class="record-grid">
+        <article class="panel patient-card">
+            <div class="patient-avatar">MT</div>
+            <h2 th:text="${paciente.nombre}">Maria Torres Huaman</h2>
+            <p>DNI <span th:text="${paciente.dni}">45872163</span></p>
+            <div class="patient-tags">
+                <span th:text="${paciente.edad}">32 anos</span>
+                <span th:text="${paciente.tipoSeguro}">Asegurada titular</span>
+                <span>Riesgo <strong th:text="${paciente.riesgo}">Bajo</strong></span>
+            </div>
+        </article>
+
+        <article class="panel">
+            <div class="panel-header">
+                <h2>Documentos clinicos</h2>
+                <span>Repositorio HIS</span>
+            </div>
+            <div class="document-list">
+                <article th:each="documento : ${documentos}">
+                    <strong th:text="${documento.codigo}">HC-2026-001</strong>
+                    <div>
+                        <span th:text="${documento.nombre}">Historia clinica</span>
+                        <small th:text="${documento.estado}">Actualizada hoy</small>
+                    </div>
+                </article>
+            </div>
+        </article>
+    </section>
+
+    <section class="panel">
+        <div class="panel-header">
+            <h2>Registrar evento clinico</h2>
+            <span>Medico / historia</span>
+        </div>
+        <form class="appointment-form" th:action="@{/historias}" method="post">
+            <label>
+                DNI del paciente
+                <input type="text" name="pacienteDni" th:value="${paciente.dni}" required>
+            </label>
+            <label>
+                Profesional
+                <input type="text" name="profesional" placeholder="Dra. Sofia Ramirez" required>
+            </label>
+            <label>
+                Titulo
+                <input type="text" name="titulo" placeholder="Diagnostico / tratamiento" required>
+            </label>
+            <label>
+                Estado
+                <select name="estado" required>
+                    <option>Finalizada</option>
+                    <option>Actualizada</option>
+                    <option>Validada</option>
+                    <option>Seguimiento</option>
+                </select>
+            </label>
+            <label class="full-field">
+                Descripcion clinica
+                <textarea name="descripcion" rows="4" required></textarea>
+            </label>
+            <button class="primary-action full-field" type="submit">Agregar a historia</button>
+        </form>
+    </section>
+
+    <section class="panel">
+        <div class="panel-header">
+            <h2>Linea de tiempo clinica</h2>
+            <span>Continuidad asistencial</span>
+        </div>
+        <div class="timeline">
+            <article th:each="evento : ${historial}">
+                <time th:text="${evento.fecha}">03 Jul 2026</time>
+                <div>
+                    <h3 th:text="${evento.titulo}">Consulta medica</h3>
+                    <p th:text="${evento.descripcion}">Detalle clinico</p>
+                    <footer>
+                        <span th:text="${evento.profesional}">Medico</span>
+                        <strong th:text="${evento.estado}">Finalizada</strong>
+                    </footer>
+                </div>
+            </article>
+        </div>
+    </section>
+</th:block>
+</body>
+</html>
