@@ -13,6 +13,7 @@ import com.example.SistemaSalud.entity.RolEntity;
 import com.example.SistemaSalud.entity.UsuarioEntity;
 import com.example.SistemaSalud.model.Alerta;
 import com.example.SistemaSalud.model.Auditoria;
+import com.example.SistemaSalud.model.RegistroForm;
 import com.example.SistemaSalud.model.RolSistema;
 import com.example.SistemaSalud.model.UsuarioSesion;
 
@@ -38,6 +39,20 @@ public class SeguridadService {
         return seguridadDao.findUsuarioByCredentials(username.trim(), password)
                 .map(this::toModel)
                 .orElseThrow(() -> new IllegalArgumentException("Credenciales incorrectas."));
+    }
+
+    public UsuarioSesion registrarUsuario(RegistroForm form) {
+        validarRegistro(form);
+        if (seguridadDao.existsUsername(form.getUsername().trim())) {
+            throw new IllegalArgumentException("Ese usuario ya existe. Prueba con otro nombre de usuario.");
+        }
+
+        UsuarioEntity usuario = new UsuarioEntity(null, form.getUsername().trim(), form.getPassword().trim(),
+                form.getNombre().trim(), normalizarRol(form.getRol()), iniciales(form.getNombre()),
+                "Registrado", true);
+        UsuarioEntity guardado = seguridadDao.saveUsuario(usuario);
+        registrarAuditoria(guardado.getNombre(), guardado.getRol(), "Registro de usuario", "Autorizado");
+        return toModel(guardado);
     }
 
     public List<Alerta> alertas() {
@@ -69,6 +84,42 @@ public class SeguridadService {
     private UsuarioSesion toModel(UsuarioEntity usuario) {
         return new UsuarioSesion(usuario.getNombre(), usuario.getRol(), usuario.getIniciales(), usuario.getEstado(),
                 usuario.getUsername());
+    }
+
+    private void validarRegistro(RegistroForm form) {
+        if (form == null || isBlank(form.getNombre()) || isBlank(form.getUsername()) || isBlank(form.getPassword())
+                || isBlank(form.getConfirmPassword()) || isBlank(form.getRol())) {
+            throw new IllegalArgumentException("Completa todos los campos del registro.");
+        }
+        if (form.getUsername().trim().length() < 4) {
+            throw new IllegalArgumentException("El usuario debe tener al menos 4 caracteres.");
+        }
+        if (form.getPassword().trim().length() < 6) {
+            throw new IllegalArgumentException("La contrasena debe tener al menos 6 caracteres.");
+        }
+        if (!form.getPassword().equals(form.getConfirmPassword())) {
+            throw new IllegalArgumentException("Las contrasenas no coinciden.");
+        }
+    }
+
+    private String normalizarRol(String rol) {
+        String limpio = rol.trim();
+        if (limpio.equals("Paciente") || limpio.equals("Medico") || limpio.equals("Administrativo")) {
+            return limpio;
+        }
+        return "Paciente";
+    }
+
+    private String iniciales(String nombre) {
+        String[] partes = nombre.trim().split("\\s+");
+        if (partes.length == 1) {
+            return partes[0].substring(0, Math.min(2, partes[0].length())).toUpperCase();
+        }
+        return (partes[0].substring(0, 1) + partes[1].substring(0, 1)).toUpperCase();
+    }
+
+    private boolean isBlank(String value) {
+        return value == null || value.trim().isEmpty();
     }
 
     private Alerta toModel(AlertaEntity alerta) {

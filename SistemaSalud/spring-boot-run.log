@@ -9,7 +9,7 @@
 [INFO] 
 [INFO] --- resources:3.5.0:resources (default-resources) @ SistemaSalud ---
 [INFO] Copying 1 resource from src\main\resources to target\classes
-[INFO] Copying 10 resources from src\main\resources to target\classes
+[INFO] Copying 14 resources from src\main\resources to target\classes
 [INFO] 
 [INFO] --- compiler:3.15.0:compile (default-compile) @ SistemaSalud ---
 [INFO] Nothing to compile - all classes are up to date.
@@ -35,36 +35,36 @@
 
  :: Spring Boot ::                (v4.1.0)
 
-2026-07-04T02:57:36.475-05:00  INFO 23192 --- [SistemaSalud] [  restartedMain] c.e.S.SistemaSaludApplication            : Starting SistemaSaludApplication using Java 17.0.12 with PID 23192 (C:\Users\Andres\Desktop\Analisis - semana 15\SistemaSalud\target\classes started by Andres in C:\Users\Andres\Desktop\Analisis - semana 15\SistemaSalud)
-2026-07-04T02:57:36.483-05:00  INFO 23192 --- [SistemaSalud] [  restartedMain] c.e.S.SistemaSaludApplication            : No active profile set, falling back to 1 default profile: "default"
-2026-07-04T02:57:36.485-05:00 DEBUG 23192 --- [SistemaSalud] [  restartedMain] o.s.boot.SpringApplication               : Loading source class com.example.SistemaSalud.SistemaSaludApplication
-2026-07-04T02:57:36.611-05:00 DEBUG 23192 --- [SistemaSalud] [  restartedMain] o.s.b.devtools.restart.ChangeableUrls    : Matching URLs for reloading : [file:/C:/Users/Andres/Desktop/Analisis%20-%20semana%2015/SistemaSalud/target/classes/]
-2026-07-04T02:57:36.611-05:00 DEBUG 23192 --- [SistemaSalud] [  restartedMain] o.s.b.d.settings.DevToolsSettings        : Included patterns for restart : []
-2026-07-04T02:57:36.612-05:00 DEBUG 23192 --- [SistemaSalud] [  restartedMain] o.s.b.d.settings.DevToolsSettings        : Excluded patterns for restart : [/spring-boot-starter-[\w-]+/, /spring-boot/(bin|build|out)/, /spring-boot-starter/(bin|build|out)/, /spring-boot-devtools/(bin|build|out)/, /spring-boot-actuator/(bin|build|out)/, /spring-boot-autoconfigure/(bin|build|out)/]
-2026-07-04T02:57:36.612-05:00  INFO 23192 --- [SistemaSalud] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-07-04T02:57:36.612-05:00  INFO 23192 --- [SistemaSalud] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-07-04T02:57:36.614-05:00 DEBUG 23192 --- [SistemaSalud] [  restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@7e0643dc
-2026-07-04T02:57:38.183-05:00 DEBUG 23192 --- [SistemaSalud] [  restartedMain] o.s.b.t.s.TomcatServletWebServerFactory  : Code archive: C:\Users\Andres\.m2\repository\org\springframework\boot\spring-boot-web-server\4.1.0\spring-boot-web-server-4.1.0.jar
-2026-07-04T02:57:38.184-05:00 DEBUG 23192 --- [SistemaSalud] [  restartedMain] o.s.b.t.s.TomcatServletWebServerFactory  : Code archive: C:\Users\Andres\.m2\repository\org\springframework\boot\spring-boot-web-server\4.1.0\spring-boot-web-server-4.1.0.jar
-2026-07-04T02:57:38.186-05:00 DEBUG 23192 --- [SistemaSalud] [  restartedMain] o.s.b.t.s.TomcatServletWebServerFactory  : None of the document roots [src/main/webapp, public, static] point to a directory and will be ignored.
-2026-07-04T02:57:38.294-05:00  INFO 23192 --- [SistemaSalud] [  restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
-2026-07-04T02:57:38.328-05:00  INFO 23192 --- [SistemaSalud] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-07-04T02:57:38.328-05:00  INFO 23192 --- [SistemaSalud] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
-2026-07-04T02:57:38.419-05:00 DEBUG 23192 --- [SistemaSalud] [  restartedMain] b.w.c.s.WebApplicationContextInitializer : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
-2026-07-04T02:57:38.423-05:00  INFO 23192 --- [SistemaSalud] [  restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1808 ms
-2026-07-04T02:57:38.457-05:00 DEBUG 23192 --- [SistemaSalud] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
-2026-07-04T02:57:38.457-05:00 DEBUG 23192 --- [SistemaSalud] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
-2026-07-04T02:57:38.533-05:00 DEBUG 23192 --- [SistemaSalud] [  restartedMain] o.s.b.s.f.OrderedRequestContextFilter    : Filter 'requestContextFilter' configured for use
-2026-07-04T02:57:38.543-05:00 DEBUG 23192 --- [SistemaSalud] [  restartedMain] o.s.b.s.f.OrderedCharacterEncodingFilter : Filter 'characterEncodingFilter' configured for use
-2026-07-04T02:57:38.546-05:00 DEBUG 23192 --- [SistemaSalud] [  restartedMain] o.s.b.s.filter.OrderedFormContentFilter  : Filter 'formContentFilter' configured for use
-2026-07-04T02:57:38.748-05:00  INFO 23192 --- [SistemaSalud] [  restartedMain] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
-2026-07-04T02:57:38.818-05:00 DEBUG 23192 --- [SistemaSalud] [  restartedMain] o.s.b.a.AutoConfigurationPackages        : @EnableAutoConfiguration was declared on a class in the package 'com.example.SistemaSalud'. Automatic @Repository and @Entity scanning is enabled.
-2026-07-04T02:57:39.115-05:00 DEBUG 23192 --- [SistemaSalud] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
-2026-07-04T02:57:39.208-05:00 DEBUG 23192 --- [SistemaSalud] [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2026-07-04T02:57:39.315-05:00 DEBUG 23192 --- [SistemaSalud] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 1 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
-2026-07-04T02:57:39.648-05:00 DEBUG 23192 --- [SistemaSalud] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2026-07-04T02:57:39.937-05:00  INFO 23192 --- [SistemaSalud] [  restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
-2026-07-04T02:57:39.953-05:00 DEBUG 23192 --- [SistemaSalud] [  restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+2026-07-04T10:38:55.111-05:00  INFO 11292 --- [SistemaSalud] [  restartedMain] c.e.S.SistemaSaludApplication            : Starting SistemaSaludApplication using Java 17.0.12 with PID 11292 (C:\Users\Andres\Desktop\Analisis - semana 15\SistemaSalud\target\classes started by Andres in C:\Users\Andres\Desktop\Analisis - semana 15\SistemaSalud)
+2026-07-04T10:38:55.114-05:00  INFO 11292 --- [SistemaSalud] [  restartedMain] c.e.S.SistemaSaludApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-07-04T10:38:55.115-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.boot.SpringApplication               : Loading source class com.example.SistemaSalud.SistemaSaludApplication
+2026-07-04T10:38:55.164-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.b.devtools.restart.ChangeableUrls    : Matching URLs for reloading : [file:/C:/Users/Andres/Desktop/Analisis%20-%20semana%2015/SistemaSalud/target/classes/]
+2026-07-04T10:38:55.165-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.b.d.settings.DevToolsSettings        : Included patterns for restart : []
+2026-07-04T10:38:55.165-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.b.d.settings.DevToolsSettings        : Excluded patterns for restart : [/spring-boot-starter-[\w-]+/, /spring-boot/(bin|build|out)/, /spring-boot-starter/(bin|build|out)/, /spring-boot-devtools/(bin|build|out)/, /spring-boot-actuator/(bin|build|out)/, /spring-boot-autoconfigure/(bin|build|out)/]
+2026-07-04T10:38:55.165-05:00  INFO 11292 --- [SistemaSalud] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-07-04T10:38:55.165-05:00  INFO 11292 --- [SistemaSalud] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-07-04T10:38:55.166-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@4f24822e
+2026-07-04T10:38:56.117-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.b.t.s.TomcatServletWebServerFactory  : Code archive: C:\Users\Andres\.m2\repository\org\springframework\boot\spring-boot-web-server\4.1.0\spring-boot-web-server-4.1.0.jar
+2026-07-04T10:38:56.119-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.b.t.s.TomcatServletWebServerFactory  : Code archive: C:\Users\Andres\.m2\repository\org\springframework\boot\spring-boot-web-server\4.1.0\spring-boot-web-server-4.1.0.jar
+2026-07-04T10:38:56.120-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.b.t.s.TomcatServletWebServerFactory  : None of the document roots [src/main/webapp, public, static] point to a directory and will be ignored.
+2026-07-04T10:38:56.154-05:00  INFO 11292 --- [SistemaSalud] [  restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-07-04T10:38:56.167-05:00  INFO 11292 --- [SistemaSalud] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-04T10:38:56.167-05:00  INFO 11292 --- [SistemaSalud] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-07-04T10:38:56.205-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] b.w.c.s.WebApplicationContextInitializer : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2026-07-04T10:38:56.207-05:00  INFO 11292 --- [SistemaSalud] [  restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1040 ms
+2026-07-04T10:38:56.225-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2026-07-04T10:38:56.226-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
+2026-07-04T10:38:56.256-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.b.s.f.OrderedRequestContextFilter    : Filter 'requestContextFilter' configured for use
+2026-07-04T10:38:56.260-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.b.s.f.OrderedCharacterEncodingFilter : Filter 'characterEncodingFilter' configured for use
+2026-07-04T10:38:56.261-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.b.s.filter.OrderedFormContentFilter  : Filter 'formContentFilter' configured for use
+2026-07-04T10:38:56.443-05:00  INFO 11292 --- [SistemaSalud] [  restartedMain] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-07-04T10:38:56.474-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.b.a.AutoConfigurationPackages        : @EnableAutoConfiguration was declared on a class in the package 'com.example.SistemaSalud'. Automatic @Repository and @Entity scanning is enabled.
+2026-07-04T10:38:56.553-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 29 mappings in 'requestMappingHandlerMapping'
+2026-07-04T10:38:56.569-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2026-07-04T10:38:56.583-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 1 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
+2026-07-04T10:38:56.641-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2026-07-04T10:38:56.735-05:00  INFO 11292 --- [SistemaSalud] [  restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-07-04T10:38:56.744-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
 
 
 ============================
@@ -84,6 +84,44 @@ Positive matches:
 
    ApplicationAvailabilityAutoConfiguration#applicationAvailability matched:
       - @ConditionalOnMissingBean (types: org.springframework.boot.availability.ApplicationAvailability; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType' (OnClassCondition)
+      - @ConditionalOnMissingBean (types: io.r2dbc.spi.ConnectionFactory; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceAutoConfiguration.PooledDataSourceConfiguration matched:
+      - AnyNestedCondition 1 matched 1 did not; NestedCondition on DataSourceAutoConfiguration.PooledDataSourceCondition.PooledDataSourceAvailable PooledDataSource found supported DataSource; NestedCondition on DataSourceAutoConfiguration.PooledDataSourceCondition.ExplicitType @ConditionalOnProperty (spring.datasource.type) did not find property 'spring.datasource.type' (DataSourceAutoConfiguration.PooledDataSourceCondition)
+      - @ConditionalOnMissingBean (types: javax.sql.DataSource,javax.sql.XADataSource; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceAutoConfiguration.PooledDataSourceConfiguration#jdbcConnectionDetails matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.jdbc.autoconfigure.JdbcConnectionDetails; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceConfiguration.Hikari matched:
+      - @ConditionalOnClass found required class 'com.zaxxer.hikari.HikariDataSource' (OnClassCondition)
+      - @ConditionalOnProperty (spring.datasource.type=com.zaxxer.hikari.HikariDataSource) matched (OnPropertyCondition)
+      - @ConditionalOnMissingBean (types: javax.sql.DataSource; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourceInitializationAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.jdbc.datasource.init.DatabasePopulator' (OnClassCondition)
+      - SQL InitializationDatabase Initialization default value is EMBEDDED (OnSqlInitializationCondition)
+      - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource'; @ConditionalOnMissingBean (types: org.springframework.boot.sql.autoconfigure.init.ApplicationScriptDatabaseInitializer; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.HikariPoolDataSourceMetadataProviderConfiguration matched:
+      - @ConditionalOnClass found required class 'com.zaxxer.hikari.HikariDataSource' (OnClassCondition)
+
+   DataSourceTransactionManagerAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.core.JdbcTemplate', 'org.springframework.transaction.TransactionManager' (OnClassCondition)
+
+   DataSourceTransactionManagerAutoConfiguration.JdbcTransactionManagerConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource' (OnBeanCondition)
+
+   DataSourceTransactionManagerAutoConfiguration.JdbcTransactionManagerConfiguration#transactionManager matched:
+      - @ConditionalOnMissingBean (types: org.springframework.transaction.TransactionManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   DevToolsDataSourceAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'javax.sql.DataSource' (OnClassCondition)
+      - Devtools devtools enabled. (OnEnabledDevToolsCondition)
+      - DevTools DataSource Condition found auto-configured DataSource (DevToolsDataSourceAutoConfiguration.DevToolsDataSourceCondition)
 
    DispatcherServletAutoConfiguration matched:
       - @ConditionalOnClass found required class 'org.springframework.web.servlet.DispatcherServlet' (OnClassCondition)
@@ -161,6 +199,16 @@ Positive matches:
    JacksonHttpMessageConvertersConfiguration.JacksonJsonHttpMessageConverterConfiguration#jacksonJsonHttpMessageConvertersCustomizer matched:
       - @ConditionalOnMissingBean (types: org.springframework.http.converter.json.JacksonJsonHttpMessageConverter ignored: org.springframework.hateoas.server.mvc.TypeConstrainedJacksonJsonHttpMessageConverter,org.springframework.data.rest.webmvc.alps.AlpsJacksonJsonHttpMessageConverter; SearchStrategy: all) did not find any beans (OnBeanCondition)
 
+   JdbcClientAutoConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate; SearchStrategy: all) found a single bean 'namedParameterJdbcTemplate'; @ConditionalOnMissingBean (types: org.springframework.jdbc.core.simple.JdbcClient; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   JdbcTemplateAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.core.JdbcTemplate' (OnClassCondition)
+      - @ConditionalOnSingleCandidate (types: javax.sql.DataSource; SearchStrategy: all) found a single bean 'dataSource' (OnBeanCondition)
+
+   JdbcTemplateConfiguration matched:
+      - @ConditionalOnMissingBean (types: org.springframework.jdbc.core.JdbcOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
    LifecycleAutoConfiguration#defaultLifecycleProcessor matched:
       - @ConditionalOnMissingBean (names: lifecycleProcessor; SearchStrategy: current) did not find any beans (OnBeanCondition)
 
@@ -189,6 +237,16 @@ Positive matches:
 
    MultipartAutoConfiguration#multipartResolver matched:
       - @ConditionalOnMissingBean (types: org.springframework.web.multipart.MultipartResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   NamedParameterJdbcTemplateConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: org.springframework.jdbc.core.JdbcTemplate; SearchStrategy: all) found a single bean 'jdbcTemplate'; @ConditionalOnMissingBean (types: org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   PersistenceExceptionTranslationAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor' (OnClassCondition)
+
+   PersistenceExceptionTranslationAutoConfiguration#persistenceExceptionTranslationPostProcessor matched:
+      - @ConditionalOnBooleanProperty (spring.persistence.exceptiontranslation.enabled=true) matched (OnPropertyCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor; SearchStrategy: all) did not find any beans (OnBeanCondition)
 
    PropertyPlaceholderAutoConfiguration#propertySourcesPlaceholderConfigurer matched:
       - @ConditionalOnMissingBean (types: org.springframework.context.support.PropertySourcesPlaceholderConfigurer; SearchStrategy: current) did not find any beans (OnBeanCondition)
@@ -256,6 +314,27 @@ Positive matches:
    TomcatWebServerConfiguration.TomcatWebSocketConfiguration matched:
       - @ConditionalOnClass found required class 'org.apache.tomcat.websocket.server.WsSci' (OnClassCondition)
 
+   TransactionAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.transaction.PlatformTransactionManager' (OnClassCondition)
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration matched:
+      - @ConditionalOnBean (types: org.springframework.transaction.TransactionManager; SearchStrategy: all) found bean 'transactionManager'; @ConditionalOnMissingBean (types: org.springframework.transaction.annotation.AbstractTransactionManagementConfiguration; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration.CglibAutoProxyConfiguration matched:
+      - @ConditionalOnBooleanProperty (spring.aop.proxy-target-class=true) matched (OnPropertyCondition)
+
+   TransactionAutoConfiguration.TransactionTemplateConfiguration matched:
+      - @ConditionalOnSingleCandidate (types: org.springframework.transaction.PlatformTransactionManager; SearchStrategy: all) found a single bean 'transactionManager' (OnBeanCondition)
+
+   TransactionAutoConfiguration.TransactionTemplateConfiguration#transactionTemplate matched:
+      - @ConditionalOnMissingBean (types: org.springframework.transaction.support.TransactionOperations; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TransactionManagerCustomizationAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.transaction.PlatformTransactionManager' (OnClassCondition)
+
+   TransactionManagerCustomizationAutoConfiguration#platformTransactionManagerCustomizers matched:
+      - @ConditionalOnMissingBean (types: org.springframework.boot.transaction.autoconfigure.TransactionManagerCustomizers; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
    WebMvcAutoConfiguration matched:
       - @ConditionalOnClass found required classes 'jakarta.servlet.Servlet', 'org.springframework.web.servlet.DispatcherServlet', 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer' (OnClassCondition)
       - found 'session' scope (OnWebApplicationCondition)
@@ -291,17 +370,57 @@ Negative matches:
       Did not match:
          - @ConditionalOnClass did not find required class 'org.aspectj.weaver.Advice' (OnClassCondition)
 
-   DevToolsDataSourceAutoConfiguration:
+   DataSourceAutoConfiguration.EmbeddedDatabaseConfiguration:
       Did not match:
-         - DevTools DataSource Condition did not find a single DataSource bean (DevToolsDataSourceAutoConfiguration.DevToolsDataSourceCondition)
-      Matched:
-         - @ConditionalOnClass found required class 'javax.sql.DataSource' (OnClassCondition)
-         - Devtools devtools enabled. (OnEnabledDevToolsCondition)
+         - EmbeddedDataSource spring.datasource.url is set (DataSourceAutoConfiguration.EmbeddedDatabaseCondition)
+
+   DataSourceCheckpointRestoreConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.crac.Resource' (OnClassCondition)
+
+   DataSourceConfiguration.Dbcp2:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.commons.dbcp2.BasicDataSource' (OnClassCondition)
+
+   DataSourceConfiguration.Generic:
+      Did not match:
+         - @ConditionalOnProperty (spring.datasource.type) did not find property 'spring.datasource.type' (OnPropertyCondition)
+
+   DataSourceConfiguration.OracleUcp:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'oracle.ucp.jdbc.PoolDataSourceImpl', 'oracle.jdbc.OracleConnection' (OnClassCondition)
+
+   DataSourceConfiguration.Tomcat:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.tomcat.jdbc.pool.DataSource' (OnClassCondition)
+
+   DataSourceHealthContributorAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.springframework.boot.health.autoconfigure.contributor.ConditionalOnEnabledHealthIndicator' (OnClassCondition)
+
+   DataSourceJmxConfiguration:
+      Did not match:
+         - @ConditionalOnBooleanProperty (spring.jmx.enabled=true) did not find property 'spring.jmx.enabled' (OnPropertyCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.CommonsDbcp2PoolDataSourceMetadataProviderConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.commons.dbcp2.BasicDataSource' (OnClassCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.OracleUcpPoolDataSourceMetadataProviderConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required classes 'oracle.ucp.jdbc.PoolDataSource', 'oracle.jdbc.OracleConnection' (OnClassCondition)
+
+   DataSourcePoolMetadataProvidersConfiguration.TomcatDataSourcePoolMetadataProviderConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'org.apache.tomcat.jdbc.pool.DataSource' (OnClassCondition)
+
+   DataSourcePoolMetricsAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'io.micrometer.core.instrument.MeterRegistry' (OnClassCondition)
 
    DevToolsDataSourceAutoConfiguration.DatabaseShutdownExecutorEntityManagerFactoryDependsOnConfiguration:
       Did not match:
          - @ConditionalOnClass did not find required classes 'org.springframework.boot.jpa.autoconfigure.EntityManagerFactoryDependsOnPostProcessor', 'org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean' (OnClassCondition)
-         - Ancestor org.springframework.boot.devtools.autoconfigure.DevToolsDataSourceAutoConfiguration did not match (ConditionEvaluationReport.AncestorsMatchedCondition)
 
    DevToolsR2dbcAutoConfiguration:
       Did not match:
@@ -341,13 +460,27 @@ Negative matches:
       Matched:
          - @ConditionalOnClass found required class 'org.springframework.jmx.export.MBeanExporter' (OnClassCondition)
 
+   JndiDataSourceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (spring.datasource.jndi-name) did not find property 'spring.datasource.jndi-name' (OnPropertyCondition)
+      Matched:
+         - @ConditionalOnClass found required classes 'javax.sql.DataSource', 'org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType' (OnClassCondition)
+
    JsonbHttpMessageConvertersConfiguration:
       Did not match:
          - @ConditionalOnClass did not find required class 'jakarta.json.bind.Jsonb' (OnClassCondition)
 
+   JtaAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'jakarta.transaction.Transaction' (OnClassCondition)
+
    KotlinSerializationHttpMessageConvertersConfiguration:
       Did not match:
          - @ConditionalOnClass did not find required classes 'kotlinx.serialization.Serializable', 'kotlinx.serialization.json.Json' (OnClassCondition)
+
+   LazyConnectionDataSourceConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (spring.datasource.connection-fetch=lazy) did not find property 'spring.datasource.connection-fetch' (OnPropertyCondition)
 
    LocalDevToolsAutoConfiguration.LiveReloadConfiguration:
       Did not match:
@@ -467,6 +600,19 @@ Negative matches:
       Did not match:
          - @ConditionalOnThreading did not find VIRTUAL (OnThreadingCondition)
 
+   TransactionAutoConfiguration#transactionalOperator:
+      Did not match:
+         - @ConditionalOnSingleCandidate (types: org.springframework.transaction.ReactiveTransactionManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   TransactionAutoConfiguration.AspectJTransactionManagementConfiguration:
+      Did not match:
+         - @ConditionalOnBean did not find required type 'org.springframework.transaction.aspectj.AbstractTransactionAspect' (OnBeanCondition)
+         - @ConditionalOnBean (types: org.springframework.transaction.aspectj.AbstractTransactionAspect; SearchStrategy: all) did not find any beans of type org.springframework.transaction.aspectj.AbstractTransactionAspect (OnBeanCondition)
+
+   TransactionAutoConfiguration.EnableTransactionManagementConfiguration.JdkDynamicAutoProxyConfiguration:
+      Did not match:
+         - @ConditionalOnBooleanProperty (spring.aop.proxy-target-class=false) did not find property 'spring.aop.proxy-target-class' (OnPropertyCondition)
+
    WebMvcAutoConfiguration#hiddenHttpMethodFilter:
       Did not match:
          - @ConditionalOnBooleanProperty (spring.mvc.hiddenmethod.filter.enabled=true) did not find property 'spring.mvc.hiddenmethod.filter.enabled' (OnPropertyCondition)
@@ -495,6 +641,10 @@ Negative matches:
       Did not match:
          - @ConditionalOnClass did not find required class 'org.springframework.boot.micrometer.observation.autoconfigure.ObservationProperties' (OnClassCondition)
 
+   XADataSourceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnClass did not find required class 'jakarta.transaction.TransactionManager' (OnClassCondition)
+
 
 Exclusions:
 -----------
@@ -519,29 +669,351 @@ Unconditional classes:
 
 
 
-2026-07-04T02:57:39.960-05:00  INFO 23192 --- [SistemaSalud] [  restartedMain] c.e.S.SistemaSaludApplication            : Started SistemaSaludApplication in 4.379 seconds (process running for 5.71)
-2026-07-04T02:57:39.964-05:00 DEBUG 23192 --- [SistemaSalud] [  restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
-2026-07-04T02:57:39.968-05:00 DEBUG 23192 --- [SistemaSalud] [  restartedMain] o.s.boot.devtools.restart.Restarter      : Creating new Restarter for thread Thread[main,5,main]
-2026-07-04T02:57:39.968-05:00 DEBUG 23192 --- [SistemaSalud] [  restartedMain] o.s.boot.devtools.restart.Restarter      : Immediately restarting application
-2026-07-04T02:57:39.969-05:00 DEBUG 23192 --- [SistemaSalud] [  restartedMain] o.s.boot.devtools.restart.Restarter      : Starting application com.example.SistemaSalud.SistemaSaludApplication with URLs [file:/C:/Users/Andres/Desktop/Analisis%20-%20semana%2015/SistemaSalud/target/classes/]
-2026-07-04T02:57:39.971-05:00 DEBUG 23192 --- [SistemaSalud] [  restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
-2026-07-04T02:58:04.732-05:00  INFO 23192 --- [SistemaSalud] [nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-07-04T02:58:04.732-05:00  INFO 23192 --- [SistemaSalud] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-07-04T02:58:04.734-05:00 DEBUG 23192 --- [SistemaSalud] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
-2026-07-04T02:58:04.735-05:00 DEBUG 23192 --- [SistemaSalud] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
-2026-07-04T02:58:04.738-05:00 DEBUG 23192 --- [SistemaSalud] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@36413642
-2026-07-04T02:58:04.739-05:00 DEBUG 23192 --- [SistemaSalud] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@bfa079c
-2026-07-04T02:58:04.739-05:00 DEBUG 23192 --- [SistemaSalud] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2026-07-04T02:58:04.740-05:00  INFO 23192 --- [SistemaSalud] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
-2026-07-04T02:58:04.759-05:00 DEBUG 23192 --- [SistemaSalud] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
-2026-07-04T02:58:04.781-05:00 DEBUG 23192 --- [SistemaSalud] [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.SistemaSalud.controller.HomeController#home(Model)
-2026-07-04T02:58:04.859-05:00 DEBUG 23192 --- [SistemaSalud] [nio-8080-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
-2026-07-04T02:58:05.620-05:00 DEBUG 23192 --- [SistemaSalud] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-04T10:38:56.750-05:00  INFO 11292 --- [SistemaSalud] [  restartedMain] c.e.S.SistemaSaludApplication            : Started SistemaSaludApplication in 2.004 seconds (process running for 2.455)
+2026-07-04T10:38:56.752-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2026-07-04T10:38:56.754-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL statement [CREATE TABLE IF NOT EXISTS usuarios (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE,
+    password TEXT,
+    nombre TEXT NOT NULL,
+    rol TEXT NOT NULL,
+    iniciales TEXT NOT NULL,
+    estado TEXT NOT NULL,
+    activo INTEGER NOT NULL DEFAULT 1
+)
+]
+2026-07-04T10:38:56.758-05:00  INFO 11292 --- [SistemaSalud] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-07-04T10:38:56.904-05:00  INFO 11292 --- [SistemaSalud] [  restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@7cd8d197
+2026-07-04T10:38:56.909-05:00  INFO 11292 --- [SistemaSalud] [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-07-04T10:38:56.918-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL statement [CREATE TABLE IF NOT EXISTS alertas (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    titulo TEXT NOT NULL,
+    detalle TEXT NOT NULL,
+    prioridad TEXT NOT NULL
+)
+]
+2026-07-04T10:38:56.919-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL statement [CREATE TABLE IF NOT EXISTS roles (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT NOT NULL UNIQUE,
+    descripcion TEXT NOT NULL
+)
+]
+2026-07-04T10:38:56.919-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL statement [CREATE TABLE IF NOT EXISTS auditorias (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fecha_hora TEXT NOT NULL,
+    usuario TEXT NOT NULL,
+    rol TEXT NOT NULL,
+    accion TEXT NOT NULL,
+    resultado TEXT NOT NULL
+)
+]
+2026-07-04T10:38:56.920-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL statement [CREATE TABLE IF NOT EXISTS medicos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT NOT NULL,
+    especialidad TEXT NOT NULL,
+    disponibilidad TEXT NOT NULL,
+    ubicacion TEXT NOT NULL,
+    detalle TEXT NOT NULL,
+    disponible_hoy INTEGER NOT NULL
+)
+]
+2026-07-04T10:38:56.920-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL statement [CREATE TABLE IF NOT EXISTS pacientes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT NOT NULL,
+    dni TEXT NOT NULL UNIQUE,
+    edad INTEGER NOT NULL,
+    tipo_seguro TEXT NOT NULL,
+    riesgo TEXT NOT NULL
+)
+]
+2026-07-04T10:38:56.921-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL statement [CREATE TABLE IF NOT EXISTS citas (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    paciente_id INTEGER,
+    medico_id INTEGER,
+    codigo TEXT NOT NULL UNIQUE,
+    paciente TEXT NOT NULL,
+    dni TEXT NOT NULL,
+    especialidad TEXT NOT NULL,
+    fecha_programada TEXT NOT NULL,
+    fecha_etiqueta TEXT NOT NULL,
+    hora_programada TEXT NOT NULL,
+    estado TEXT NOT NULL,
+    canal TEXT NOT NULL,
+    prioridad TEXT NOT NULL,
+    motivo TEXT NOT NULL
+)
+]
+2026-07-04T10:38:56.921-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL statement [CREATE TABLE IF NOT EXISTS slots (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    hora TEXT NOT NULL,
+    especialidad TEXT NOT NULL,
+    estado TEXT NOT NULL,
+    disponible INTEGER NOT NULL
+)
+]
+2026-07-04T10:38:56.922-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL statement [CREATE TABLE IF NOT EXISTS historias_eventos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    paciente_id INTEGER,
+    medico_id INTEGER,
+    paciente_dni TEXT NOT NULL,
+    fecha TEXT NOT NULL,
+    fecha_etiqueta TEXT NOT NULL,
+    titulo TEXT NOT NULL,
+    descripcion TEXT NOT NULL,
+    profesional TEXT NOT NULL,
+    estado TEXT NOT NULL
+)
+]
+2026-07-04T10:38:56.922-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL statement [CREATE TABLE IF NOT EXISTS documentos_clinicos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    paciente_id INTEGER,
+    codigo TEXT NOT NULL UNIQUE,
+    paciente_dni TEXT NOT NULL,
+    nombre TEXT NOT NULL,
+    estado TEXT NOT NULL
+)
+]
+2026-07-04T10:38:56.922-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL statement [CREATE TABLE IF NOT EXISTS turnos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    dni TEXT,
+    cita_codigo TEXT,
+    codigo TEXT NOT NULL UNIQUE,
+    especialidad TEXT NOT NULL,
+    ubicacion TEXT NOT NULL,
+    estado TEXT NOT NULL
+)
+]
+2026-07-04T10:38:56.923-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL statement [CREATE TABLE IF NOT EXISTS requerimientos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    codigo TEXT NOT NULL UNIQUE,
+    prioridad TEXT NOT NULL,
+    descripcion TEXT NOT NULL
+)
+]
+2026-07-04T10:38:56.924-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [PRAGMA table_info(usuarios)]
+2026-07-04T10:38:56.928-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [PRAGMA table_info(usuarios)]
+2026-07-04T10:38:56.929-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [PRAGMA table_info(usuarios)]
+2026-07-04T10:38:56.930-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [PRAGMA table_info(citas)]
+2026-07-04T10:38:56.930-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [PRAGMA table_info(citas)]
+2026-07-04T10:38:56.932-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [PRAGMA table_info(historias_eventos)]
+2026-07-04T10:38:56.932-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [PRAGMA table_info(historias_eventos)]
+2026-07-04T10:38:56.933-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [PRAGMA table_info(documentos_clinicos)]
+2026-07-04T10:38:56.933-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [PRAGMA table_info(turnos)]
+2026-07-04T10:38:56.934-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [PRAGMA table_info(turnos)]
+2026-07-04T10:38:56.934-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL update [UPDATE citas
+SET paciente_id = (SELECT id FROM pacientes WHERE pacientes.dni = citas.dni)
+WHERE paciente_id IS NULL
+]
+2026-07-04T10:38:56.935-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL update [UPDATE citas
+SET medico_id = (
+    SELECT id FROM medicos
+    WHERE lower(medicos.especialidad) = lower(citas.especialidad)
+    ORDER BY disponible_hoy DESC, id
+    LIMIT 1
+)
+WHERE medico_id IS NULL
+]
+2026-07-04T10:38:56.936-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL update [UPDATE historias_eventos
+SET paciente_id = (SELECT id FROM pacientes WHERE pacientes.dni = historias_eventos.paciente_dni)
+WHERE paciente_id IS NULL
+]
+2026-07-04T10:38:56.936-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL update [UPDATE documentos_clinicos
+SET paciente_id = (SELECT id FROM pacientes WHERE pacientes.dni = documentos_clinicos.paciente_dni)
+WHERE paciente_id IS NULL
+]
+2026-07-04T10:38:56.938-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT COUNT(*) FROM usuarios]
+2026-07-04T10:38:56.940-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL update [UPDATE usuarios
+SET username = COALESCE(username, 'paciente'),
+    password = COALESCE(password, 'paciente123'),
+    activo = COALESCE(activo, 1)
+WHERE id = (SELECT MIN(id) FROM usuarios)
+]
+2026-07-04T10:38:56.941-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-07-04T10:38:56.942-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT COUNT(*) FROM usuarios WHERE username = ?]
+2026-07-04T10:38:56.949-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-07-04T10:38:56.949-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT COUNT(*) FROM usuarios WHERE username = ?]
+2026-07-04T10:38:56.950-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-07-04T10:38:56.950-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT COUNT(*) FROM usuarios WHERE username = ?]
+2026-07-04T10:38:56.951-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT COUNT(*) FROM alertas]
+2026-07-04T10:38:56.951-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT COUNT(*) FROM roles]
+2026-07-04T10:38:56.952-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT COUNT(*) FROM auditorias]
+2026-07-04T10:38:56.952-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT COUNT(*) FROM medicos]
+2026-07-04T10:38:56.953-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT COUNT(*) FROM pacientes]
+2026-07-04T10:38:56.953-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT COUNT(*) FROM slots]
+2026-07-04T10:38:56.954-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT COUNT(*) FROM citas]
+2026-07-04T10:38:56.954-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT COUNT(*) FROM historias_eventos]
+2026-07-04T10:38:56.955-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT COUNT(*) FROM documentos_clinicos]
+2026-07-04T10:38:56.955-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT COUNT(*) FROM turnos]
+2026-07-04T10:38:56.956-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT COUNT(*) FROM requerimientos]
+2026-07-04T10:38:56.958-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.boot.devtools.restart.Restarter      : Creating new Restarter for thread Thread[main,5,main]
+2026-07-04T10:38:56.958-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.boot.devtools.restart.Restarter      : Immediately restarting application
+2026-07-04T10:38:56.958-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.boot.devtools.restart.Restarter      : Starting application com.example.SistemaSalud.SistemaSaludApplication with URLs [file:/C:/Users/Andres/Desktop/Analisis%20-%20semana%2015/SistemaSalud/target/classes/]
+2026-07-04T10:38:56.959-05:00 DEBUG 11292 --- [SistemaSalud] [  restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2026-07-04T10:38:59.969-05:00  INFO 11292 --- [SistemaSalud] [nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-04T10:38:59.969-05:00  INFO 11292 --- [SistemaSalud] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-07-04T10:38:59.970-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2026-07-04T10:38:59.970-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2026-07-04T10:38:59.971-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@28032ddf
+2026-07-04T10:38:59.972-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@6dcf2b79
+2026-07-04T10:38:59.972-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2026-07-04T10:38:59.972-05:00  INFO 11292 --- [SistemaSalud] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-07-04T10:38:59.981-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2026-07-04T10:38:59.981-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/registro", parameters={}
+2026-07-04T10:38:59.981-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/login", parameters={}
+2026-07-04T10:38:59.983-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/pacientes", parameters={}
+2026-07-04T10:38:59.991-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.SistemaSalud.controller.AuthController#registro(Model)
+2026-07-04T10:38:59.991-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.SistemaSalud.controller.HomeController#home(Model)
+2026-07-04T10:38:59.991-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.SistemaSalud.controller.PacienteController#pacientes(String, String, String, Model)
+2026-07-04T10:38:59.991-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.SistemaSalud.controller.AuthController#login(Model)
+2026-07-04T10:38:59.992-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2026-07-04T10:38:59.992-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2026-07-04T10:39:00.052-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT id, username, password, nombre, rol, iniciales, estado, activo
+FROM usuarios
+WHERE activo = 1
+ORDER BY CASE rol WHEN 'Administrador' THEN 1 WHEN 'Administrativo' THEN 2 ELSE 3 END, id
+LIMIT 1
+]
+2026-07-04T10:39:00.052-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT id, username, password, nombre, rol, iniciales, estado, activo
+FROM usuarios
+WHERE activo = 1
+ORDER BY CASE rol WHEN 'Administrador' THEN 1 WHEN 'Administrativo' THEN 2 ELSE 3 END, id
+LIMIT 1
+]
+2026-07-04T10:39:00.055-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT id, titulo, detalle, prioridad
+FROM alertas
+ORDER BY id
+]
+2026-07-04T10:39:00.055-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT id, titulo, detalle, prioridad
+FROM alertas
+ORDER BY id
+]
+2026-07-04T10:39:00.075-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-1] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+2026-07-04T10:39:00.076-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-2] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+2026-07-04T10:39:00.287-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-04T10:39:00.287-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-04T10:39:04.930-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/login", parameters={masked}
+2026-07-04T10:39:04.930-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.SistemaSalud.controller.AuthController#autenticar(LoginForm, HttpSession, RedirectAttributes)
+2026-07-04T10:39:04.931-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT id, username, password, nombre, rol, iniciales, estado, activo
+FROM usuarios
+WHERE activo = 1
+ORDER BY CASE rol WHEN 'Administrador' THEN 1 WHEN 'Administrativo' THEN 2 ELSE 3 END, id
+LIMIT 1
+]
+2026-07-04T10:39:04.932-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT id, titulo, detalle, prioridad
+FROM alertas
+ORDER BY id
+]
+2026-07-04T10:39:04.936-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-07-04T10:39:04.936-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, username, password, nombre, rol, iniciales, estado, activo
+FROM usuarios
+WHERE lower(username) = lower(?) AND password = ? AND activo = 1
+]
+2026-07-04T10:39:04.937-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2026-07-04T10:39:04.938-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [INSERT INTO auditorias(fecha_hora, usuario, rol, accion, resultado)
+VALUES (?, ?, ?, ?, ?)
+]
+2026-07-04T10:39:04.943-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT last_insert_rowid()]
+2026-07-04T10:39:04.946-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-9] o.s.web.servlet.view.RedirectView        : View name [redirect:], model {success=Sesion iniciada como Administrador}
+2026-07-04T10:39:04.946-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 302 FOUND
+2026-07-04T10:39:04.950-05:00 DEBUG 11292 --- [SistemaSalud] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/?success=Sesion+iniciada+como+Administrador", parameters={masked}
+2026-07-04T10:39:04.951-05:00 DEBUG 11292 --- [SistemaSalud] [io-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.SistemaSalud.controller.HomeController#home(Model)
+2026-07-04T10:39:04.951-05:00 DEBUG 11292 --- [SistemaSalud] [io-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT id, titulo, detalle, prioridad
+FROM alertas
+ORDER BY id
+]
+2026-07-04T10:39:04.952-05:00 DEBUG 11292 --- [SistemaSalud] [io-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT COUNT(*) FROM medicos WHERE disponible_hoy = 1]
+2026-07-04T10:39:04.953-05:00 DEBUG 11292 --- [SistemaSalud] [io-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT id, paciente_id, medico_id, codigo, paciente, dni, especialidad, fecha_programada, fecha_etiqueta,
+       hora_programada, estado, canal, prioridad, motivo
+FROM citas
+ORDER BY fecha_programada, hora_programada
+]
+2026-07-04T10:39:04.955-05:00 DEBUG 11292 --- [SistemaSalud] [io-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT COUNT(*) FROM documentos_clinicos WHERE codigo LIKE 'HC-%']
+2026-07-04T10:39:04.956-05:00 DEBUG 11292 --- [SistemaSalud] [io-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT id, paciente_id, medico_id, codigo, paciente, dni, especialidad, fecha_programada, fecha_etiqueta,
+       hora_programada, estado, canal, prioridad, motivo
+FROM citas
+ORDER BY fecha_programada, hora_programada
+]
+2026-07-04T10:39:04.959-05:00 DEBUG 11292 --- [SistemaSalud] [io-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-07-04T10:39:04.959-05:00 DEBUG 11292 --- [SistemaSalud] [io-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, nombre, especialidad, disponibilidad, ubicacion, detalle, disponible_hoy
+FROM medicos
+WHERE disponible_hoy = 1 AND lower(especialidad) = lower(?)
+ORDER BY nombre
+LIMIT 1
+]
+2026-07-04T10:39:04.961-05:00 DEBUG 11292 --- [SistemaSalud] [io-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-07-04T10:39:04.961-05:00 DEBUG 11292 --- [SistemaSalud] [io-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, nombre, especialidad, disponibilidad, ubicacion, detalle, disponible_hoy
+FROM medicos
+WHERE disponible_hoy = 1 AND lower(especialidad) = lower(?)
+ORDER BY nombre
+LIMIT 1
+]
+2026-07-04T10:39:04.962-05:00 DEBUG 11292 --- [SistemaSalud] [io-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-07-04T10:39:04.962-05:00 DEBUG 11292 --- [SistemaSalud] [io-8080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, nombre, especialidad, disponibilidad, ubicacion, detalle, disponible_hoy
+FROM medicos
+WHERE disponible_hoy = 1 AND lower(especialidad) = lower(?)
+ORDER BY nombre
+LIMIT 1
+]
+2026-07-04T10:39:04.964-05:00 DEBUG 11292 --- [SistemaSalud] [io-8080-exec-10] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+2026-07-04T10:39:05.014-05:00 DEBUG 11292 --- [SistemaSalud] [io-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-04T10:39:05.041-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/", parameters={}
+2026-07-04T10:39:05.042-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.SistemaSalud.controller.HomeController#home(Model)
+2026-07-04T10:39:05.042-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT id, titulo, detalle, prioridad
+FROM alertas
+ORDER BY id
+]
+2026-07-04T10:39:05.043-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT COUNT(*) FROM medicos WHERE disponible_hoy = 1]
+2026-07-04T10:39:05.044-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT id, paciente_id, medico_id, codigo, paciente, dni, especialidad, fecha_programada, fecha_etiqueta,
+       hora_programada, estado, canal, prioridad, motivo
+FROM citas
+ORDER BY fecha_programada, hora_programada
+]
+2026-07-04T10:39:05.044-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT COUNT(*) FROM documentos_clinicos WHERE codigo LIKE 'HC-%']
+2026-07-04T10:39:05.045-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT id, paciente_id, medico_id, codigo, paciente, dni, especialidad, fecha_programada, fecha_etiqueta,
+       hora_programada, estado, canal, prioridad, motivo
+FROM citas
+ORDER BY fecha_programada, hora_programada
+]
+2026-07-04T10:39:05.045-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-07-04T10:39:05.045-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, nombre, especialidad, disponibilidad, ubicacion, detalle, disponible_hoy
+FROM medicos
+WHERE disponible_hoy = 1 AND lower(especialidad) = lower(?)
+ORDER BY nombre
+LIMIT 1
+]
+2026-07-04T10:39:05.046-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-07-04T10:39:05.046-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, nombre, especialidad, disponibilidad, ubicacion, detalle, disponible_hoy
+FROM medicos
+WHERE disponible_hoy = 1 AND lower(especialidad) = lower(?)
+ORDER BY nombre
+LIMIT 1
+]
+2026-07-04T10:39:05.047-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2026-07-04T10:39:05.047-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT id, nombre, especialidad, disponibilidad, ubicacion, detalle, disponible_hoy
+FROM medicos
+WHERE disponible_hoy = 1 AND lower(especialidad) = lower(?)
+ORDER BY nombre
+LIMIT 1
+]
+2026-07-04T10:39:05.048-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-4] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+2026-07-04T10:39:05.062-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2026-07-04T10:39:05.081-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/kiosco", parameters={}
+2026-07-04T10:39:05.082-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.SistemaSalud.controller.KioscoController#kiosco(String, String, String, Model)
+2026-07-04T10:39:05.082-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT id, titulo, detalle, prioridad
+FROM alertas
+ORDER BY id
+]
+2026-07-04T10:39:05.085-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing SQL query [SELECT id, dni, cita_codigo, codigo, especialidad, ubicacion, estado
+FROM turnos
+ORDER BY codigo
+]
+2026-07-04T10:39:05.087-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-3] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+2026-07-04T10:39:05.102-05:00 DEBUG 11292 --- [SistemaSalud] [nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  03:48 min
-[INFO] Finished at: 2026-07-04T03:01:17-05:00
+[INFO] Total time:  01:30 min
+[INFO] Finished at: 2026-07-04T10:40:22-05:00
 [INFO] ------------------------------------------------------------------------
 [ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:4.1.0:run (default-cli) on project SistemaSalud: Process terminated with exit code: -1 -> [Help 1]
 [ERROR] 

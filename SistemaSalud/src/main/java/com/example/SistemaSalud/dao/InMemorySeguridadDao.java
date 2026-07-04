@@ -49,6 +49,17 @@ public class InMemorySeguridadDao implements SeguridadDao {
     }
 
     @Override
+    public boolean existsUsername(String username) {
+        return "admin".equalsIgnoreCase(username) || "paciente".equalsIgnoreCase(username);
+    }
+
+    @Override
+    public UsuarioEntity saveUsuario(UsuarioEntity usuario) {
+        usuario.setId(99L);
+        return usuario;
+    }
+
+    @Override
     public List<UsuarioEntity> findUsuarios() {
         return List.of(usuarioSesion);
     }

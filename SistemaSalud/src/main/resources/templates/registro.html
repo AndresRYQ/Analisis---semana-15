@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro | EsSalud HIS</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body class="auth-body">
+<main class="auth-page">
+    <section class="auth-card">
+        <div class="auth-brand">
+            <span class="brand-mark">
+                <span class="brand-pulse"></span>
+                HIS
+            </span>
+            <div>
+                <strong>EsSalud HIS</strong>
+                <small>Registro de usuario</small>
+            </div>
+        </div>
+
+        <div class="auth-heading">
+            <span class="date-label">Nueva cuenta</span>
+            <h1>Registrate</h1>
+            <p>Crea un usuario para ingresar al sistema. El acceso queda guardado en SQLite.</p>
+        </div>
+
+        <div th:if="${param.error}" class="alert alert-error" th:text="${param.error}"></div>
+
+        <form class="auth-form" th:action="@{/registro}" method="post">
+            <label>
+                Nombre completo
+                <input type="text" name="nombre" placeholder="Ej. Maria Torres" autocomplete="name" required>
+            </label>
+            <label>
+                Usuario
+                <input type="text" name="username" placeholder="maria.torres" autocomplete="username" minlength="4" required>
+            </label>
+            <label>
+                Rol
+                <select name="rol" required>
+                    <option>Paciente</option>
+                    <option>Medico</option>
+                    <option>Administrativo</option>
+                </select>
+            </label>
+            <label>
+                Contrasena
+                <input type="password" name="password" minlength="6" autocomplete="new-password" required>
+            </label>
+            <label>
+                Confirmar contrasena
+                <input type="password" name="confirmPassword" minlength="6" autocomplete="new-password" required>
+            </label>
+            <button class="primary-action" type="submit">Crear cuenta</button>
+        </form>
+
+        <div class="auth-footer">
+            <span>Ya tienes una cuenta?</span>
+            <a th:href="@{/login}">Volver al login</a>
+        </div>
+    </section>
+
+    <aside class="auth-side">
+        <span>Registro rapido</span>
+        <h2>Tu cuenta se activa al guardarse</h2>
+        <p>Despues del registro volveras al login para iniciar sesion con tus nuevas credenciales.</p>
+    </aside>
+</main>
+</body>
+</html>

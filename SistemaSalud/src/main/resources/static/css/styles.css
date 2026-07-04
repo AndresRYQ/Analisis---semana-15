@@ -1030,6 +1030,120 @@ td input[type="checkbox"] {
     width: auto;
 }
 
+.auth-body {
+    min-height: 100vh;
+    background:
+        linear-gradient(135deg, rgba(224, 244, 252, 0.95), rgba(247, 251, 253, 0.96)),
+        #f6f9fc;
+}
+
+.auth-page {
+    display: grid;
+    grid-template-columns: minmax(340px, 520px) minmax(320px, 1fr);
+    gap: 34px;
+    align-items: stretch;
+    width: min(1120px, calc(100% - 32px));
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 42px 0;
+}
+
+.auth-card,
+.auth-side {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+}
+
+.auth-card {
+    display: grid;
+    align-content: center;
+    gap: 24px;
+    background: rgba(255, 255, 255, 0.96);
+    padding: 38px;
+}
+
+.auth-brand {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.auth-brand strong,
+.auth-brand small {
+    display: block;
+}
+
+.auth-brand strong {
+    color: var(--ink);
+    font-size: 1.18rem;
+    font-weight: 850;
+}
+
+.auth-brand small,
+.auth-heading p,
+.auth-footer span,
+.auth-side p {
+    color: var(--muted);
+}
+
+.auth-heading h1 {
+    margin-bottom: 8px;
+}
+
+.auth-form {
+    display: grid;
+    gap: 16px;
+}
+
+.auth-form .primary-action {
+    width: 100%;
+    min-height: 50px;
+    margin-top: 4px;
+}
+
+.auth-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+}
+
+.auth-footer a {
+    color: var(--primary-dark);
+    font-weight: 800;
+}
+
+.auth-side {
+    display: grid;
+    align-content: end;
+    background:
+        linear-gradient(145deg, rgba(5, 126, 195, 0.9), rgba(0, 159, 107, 0.78)),
+        #057ec3;
+    color: #ffffff;
+    padding: 46px;
+}
+
+.auth-side span {
+    margin-bottom: 14px;
+    color: rgba(255, 255, 255, 0.78);
+    font-weight: 850;
+}
+
+.auth-side h2 {
+    max-width: 560px;
+    color: #ffffff;
+    font-size: 2rem;
+}
+
+.auth-side p {
+    max-width: 540px;
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 1rem;
+}
+
 .slot-row {
     grid-template-columns: 64px minmax(0, 1fr);
 }
@@ -1158,31 +1272,45 @@ tbody tr:last-child td {
 
 .kiosk-screen {
     min-height: 380px;
-    border: 0;
+    border: 1px solid rgba(5, 126, 195, 0.18);
     background:
-        linear-gradient(145deg, #072d4d 0%, #063a62 58%, #045f93 100%);
-    color: #ffffff;
+        linear-gradient(145deg, #ffffff 0%, #eef9f4 55%, #e5f5fd 100%);
+    color: var(--ink);
     padding: 38px;
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-md);
 }
 
 .kiosk-label {
-    color: #96d9ff;
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    border-radius: var(--radius);
+    background: var(--green-soft);
+    color: var(--green);
+    padding: 6px 10px;
     font-weight: 800;
 }
 
 .kiosk-screen h2 {
     max-width: 520px;
     margin-top: 18px;
+    margin-bottom: 8px;
+    color: var(--ink);
     font-size: 1.82rem;
     font-weight: 850;
 }
 
+.kiosk-helper {
+    max-width: 560px;
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
 .kiosk-input {
-    display: flex;
-    align-items: center;
+    display: block;
     min-height: 74px;
-    margin: 34px 0;
+    margin: 26px 0 18px;
+    border: 1px solid rgba(5, 126, 195, 0.22);
     border-radius: var(--radius);
     background: #ffffff;
     color: var(--ink);
@@ -1210,10 +1338,28 @@ tbody tr:last-child td {
     display: grid;
     place-items: center;
     min-height: 56px;
+    border: 1px solid var(--line);
     border-radius: var(--radius);
-    background: rgba(255, 255, 255, 0.16);
-    color: #ffffff;
+    background: #ffffff;
+    color: var(--primary-dark);
     font-weight: 800;
+}
+
+.kiosk-trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.kiosk-trust span {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.72);
+    color: var(--ink-soft);
+    padding: 8px 10px;
+    font-size: 0.85rem;
+    font-weight: 760;
 }
 
 .turn-list article {
@@ -1355,6 +1501,26 @@ tbody tr:last-child td {
         gap: 12px;
         min-height: 64px;
         padding: 10px 16px;
+    }
+
+    .auth-page {
+        grid-template-columns: 1fr;
+        width: min(100% - 24px, 520px);
+        padding: 18px 0;
+    }
+
+    .auth-card,
+    .auth-side {
+        padding: 24px;
+    }
+
+    .auth-side {
+        min-height: 220px;
+    }
+
+    .auth-footer {
+        align-items: flex-start;
+        flex-direction: column;
     }
 
     .search-box {

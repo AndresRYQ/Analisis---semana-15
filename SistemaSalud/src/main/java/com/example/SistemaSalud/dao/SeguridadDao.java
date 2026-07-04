@@ -14,6 +14,10 @@ public interface SeguridadDao {
 
     Optional<UsuarioEntity> findUsuarioByCredentials(String username, String password);
 
+    boolean existsUsername(String username);
+
+    UsuarioEntity saveUsuario(UsuarioEntity usuario);
+
     List<UsuarioEntity> findUsuarios();
 
     List<AlertaEntity> findAlertas();

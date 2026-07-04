@@ -47,6 +47,28 @@ public class SqliteSeguridadDao implements SeguridadDao {
     }
 
     @Override
+    public boolean existsUsername(String username) {
+        Integer count = jdbcTemplate.queryForObject("""
+                SELECT COUNT(*)
+                FROM usuarios
+                WHERE lower(username) = lower(?)
+                """, Integer.class, username);
+        return count != null && count > 0;
+    }
+
+    @Override
+    public UsuarioEntity saveUsuario(UsuarioEntity usuario) {
+        jdbcTemplate.update("""
+                INSERT INTO usuarios(username, password, nombre, rol, iniciales, estado, activo)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
+                """, usuario.getUsername(), usuario.getPassword(), usuario.getNombre(), usuario.getRol(),
+                usuario.getIniciales(), usuario.getEstado(), usuario.isActivo() ? 1 : 0);
+        Long id = jdbcTemplate.queryForObject("SELECT last_insert_rowid()", Long.class);
+        usuario.setId(id);
+        return usuario;
+    }
+
+    @Override
     public List<UsuarioEntity> findUsuarios() {
         return jdbcTemplate.query("""
                 SELECT id, username, password, nombre, rol, iniciales, estado, activo

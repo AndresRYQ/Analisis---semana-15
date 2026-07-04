@@ -61,10 +61,10 @@
         </div>
 
         <div class="user-card">
-            <span class="avatar" th:text="${usuario.iniciales}">JP</span>
+            <span class="avatar" th:text="${usuario != null ? usuario.iniciales : 'US'}">JP</span>
             <div>
-                <strong th:text="${usuario.nombre}">Juan Perez</strong>
-                <small th:text="${usuario.rol}">Paciente</small>
+                <strong th:text="${usuario != null ? usuario.nombre : 'Usuario'}">Juan Perez</strong>
+                <small th:text="${usuario != null ? usuario.rol : 'Sesion activa'}">Paciente</small>
             </div>
             <form th:action="@{/logout}" method="post">
                 <button class="signout link-button" type="submit">Salir</button>

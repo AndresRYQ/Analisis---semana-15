@@ -7,21 +7,27 @@
         <div>
             <span class="date-label">Autoservicio EsSalud</span>
             <h1>Kiosco digital</h1>
-            <p>Interfaz para que el asegurado confirme citas, revise su turno y reduzca la carga operativa presencial.</p>
+            <p>Busca tus citas con tu DNI, confirma tu llegada y recibe tu turno de atencion en pocos pasos.</p>
         </div>
     </section>
 
     <section class="kiosk-layout">
         <article class="kiosk-screen">
-            <span class="kiosk-label">Modulo de atencion</span>
-            <h2>Ingrese DNI o numero de asegurado</h2>
+            <span class="kiosk-label">Modulo de bienvenida</span>
+            <h2>Hola, ingresa tu DNI para ubicar tus citas</h2>
+            <p class="kiosk-helper">Te mostraremos tus citas registradas y podras confirmar tu llegada sin hacer fila.</p>
             <form th:action="@{/kiosco/buscar}" method="post">
                 <input class="kiosk-input" type="text" name="dni" th:value="${dniConsultado ?: '45872163'}" required>
                 <div class="kiosk-actions">
                     <button type="submit">Buscar citas</button>
-                    <a th:href="@{/historias(dni=${dniConsultado})}">Consultar historia</a>
+                    <a th:href="@{/historias(dni=${dniConsultado})}">Ver historia</a>
                 </div>
             </form>
+            <div class="kiosk-trust">
+                <span>Datos protegidos</span>
+                <span>Confirmacion rapida</span>
+                <span>Turno digital</span>
+            </div>
         </article>
 
         <article class="panel">

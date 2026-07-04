@@ -1,47 +1,57 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments/shell :: head('Login')}"></head>
-<body th:replace="~{fragments/shell :: shell('Login', 'seguridad', ~{::pageContent})}">
-<th:block th:fragment="pageContent">
-    <section class="page-intro">
-        <div>
-            <span class="date-label">Acceso por rol</span>
-            <h1>Inicio de sesion</h1>
-            <p>Usa un usuario demo para probar permisos operativos del sistema.</p>
-        </div>
-    </section>
-
-    <section class="appointment-layout">
-        <form class="panel appointment-form" th:action="@{/login}" method="post">
-            <div class="panel-header">
-                <h2>Credenciales</h2>
-                <span>SQLite</span>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | EsSalud HIS</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body class="auth-body">
+<main class="auth-page">
+    <section class="auth-card">
+        <div class="auth-brand">
+            <span class="brand-mark">
+                <span class="brand-pulse"></span>
+                HIS
+            </span>
+            <div>
+                <strong>EsSalud HIS</strong>
+                <small>Acceso seguro al sistema</small>
             </div>
-            <div th:if="${param.success}" class="alert" th:text="${param.success}"></div>
-            <div th:if="${param.error}" class="alert alert-error" th:text="${param.error}"></div>
+        </div>
+
+        <div class="auth-heading">
+            <span class="date-label">Bienvenido</span>
+            <h1>Inicia sesion</h1>
+            <p>Ingresa con tu usuario para acceder al panel, citas, historias clinicas y reportes.</p>
+        </div>
+
+        <div th:if="${param.success}" class="alert" th:text="${param.success}"></div>
+        <div th:if="${param.error}" class="alert alert-error" th:text="${param.error}"></div>
+
+        <form class="auth-form" th:action="@{/login}" method="post">
             <label>
                 Usuario
-                <input type="text" name="username" placeholder="admin" required>
+                <input type="text" name="username" placeholder="admin" autocomplete="username" required>
             </label>
             <label>
                 Contrasena
-                <input type="password" name="password" placeholder="admin123" required>
+                <input type="password" name="password" placeholder="admin123" autocomplete="current-password" required>
             </label>
-            <button class="primary-action full-field" type="submit">Ingresar</button>
+            <button class="primary-action" type="submit">Ingresar al sistema</button>
         </form>
 
-        <aside class="panel">
-            <div class="panel-header">
-                <h2>Usuarios demo</h2>
-                <span>Roles</span>
-            </div>
-            <div class="health-list">
-                <div><span>admin</span><strong>admin123</strong></div>
-                <div><span>medico</span><strong>medico123</strong></div>
-                <div><span>paciente</span><strong>paciente123</strong></div>
-            </div>
-        </aside>
+        <div class="auth-footer">
+            <span>Usuarios demo: admin/admin123, medico/medico123, paciente/paciente123</span>
+            <a th:href="@{/registro}">Crear una cuenta</a>
+        </div>
     </section>
-</th:block>
+
+    <aside class="auth-side">
+        <span>HIS conectado a SQLite</span>
+        <h2>Gestion clinica desde un solo acceso</h2>
+        <p>Controla pacientes, medicos, citas, kiosco, auditorias e historias clinicas despues de iniciar sesion.</p>
+    </aside>
+</main>
 </body>
 </html>
